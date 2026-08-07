@@ -1,2 +1,10 @@
- i want to change some code 
-this is my second change after the 1 line command
+
+PS C:\Users\aadid\OneDrive\Documents\gitest> git remote -v                                     
+origin  https:/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/@github.com:coderaditya9/gitest.git (fetch)
+origin  https:/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/@github.com:coderaditya9/gitest.git (push)
+PS C:\Users\aadid\OneDrive\Documents\gitest> git remote set-url origin https://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@github.com/coderaditya9/gitest.git
+PS C:\Users\aadid\OneDrive\Documents\gitest> git remote -v
+origin  https://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@github.com/coderaditya9/gitest.git (fetch)
+origin  https://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@github.com/coderaditya9/gitest.git (push)
+PS C:\Users\aadid\OneDrive\Documents\gitest> git push origin master 
+ git clone https://github.com/coderaditya9/gitest.git 
