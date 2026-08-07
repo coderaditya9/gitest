@@ -1,2 +1,2 @@
-print("hello dosto kya haal chal")
-print("kya aap taiyyar hai sikhne ke liye")
+print("my name is aditya dobhal")
+print("i am pursuing bca in 2025")
