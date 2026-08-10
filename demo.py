@@ -1,6 +1,11 @@
-num = int(input("enter the number  :"))
+def my_function():
+    a = 5
+    b = 6
+    c = 9
 
-if (num % 2 == 0):
-    print("even number")
-else:
-    print("odd number")
+    return d
+
+my_function()
+
+
+test()
