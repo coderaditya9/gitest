@@ -6,4 +6,4 @@ print("i am 18 year old boy")
 num = int(input("enter the number : "))
 num1 = int(input("enter the number : "))
 
-print (num + num1)
+print ("the addition : ", num + num1)
