@@ -93,7 +93,7 @@ comment
 
 <<comment
 prorgm for change the permission of file 
-comment
+
 
 read -p "enter the file name : " file
 
@@ -107,4 +107,98 @@ chmod 755 "$file"
 echo "permission changed to 755"
 
 ls -l "$file"
+comment
 
+
+<<comment
+program for change the owner of the file 
+
+
+
+read -p "enter the file name : " file 
+read -p "enter the new owner name : " owner
+
+if [ ! -f "$file" ]; then
+	echo "the file not exist"
+	exit 1
+fi
+
+sudo chown "$owner" "$file"
+echo "file owner changed"
+ls -l
+comment
+
+
+<<comment
+program for change the group ownership of the file 
+
+
+
+read -p "enter the file name : " file 
+read -p "enter the new group name : " name
+
+if [ ! -f "$file" ]; then
+	echo "the file not exist"
+	exit 1 
+fi 
+
+sudo chgrp "$name" "$file"
+echo "group name change successfully"
+ls -l "$file"
+comment
+
+
+<<comment
+program for find the username with all files
+
+
+read -p "enter the username : " username
+
+if id "$username" &>/dev/null; then
+	read -p "enter the directory to search : " dir
+	find . -user "$username"
+	exit 1
+else
+	echo "username not exist"
+fi
+comment
+
+
+<<comment
+progra for find the symbolic link 
+
+
+read -p "enter the original file path : " source 
+read -p "enter the symbolic link name : " link
+
+if [ -e "$source" ]; then
+
+	ln -s "$source" "$link"
+
+	if [ $? -eq 0 ]; then
+		echo "symbolic link created successfully"
+		ls -l "$link"
+	else
+		echo "failed to create symbolic link"
+	fi
+
+else
+	echo "error : original file does not exist"
+fi
+comment
+
+
+<<comment
+program for find the difrence btw two folder
+comment
+
+
+read -p "enter the directory name : " dir1
+read -p "enter the directory name : " dir2
+
+if [ ! -d "$dir1" ] && [ ! -d "$dir2" ]; then
+	echo "both directry does not exist"
+	exit 1
+fi
+
+diff -r "$dir1" "$dir2"
